@@ -1,15 +1,25 @@
-# COVID study dataset
+# COVID study notebooks and results
 
-This repo details a feature extraction study used to detect COVID in CT image slices. 
+This repo details a feature extraction study used to detect COVID in CT image slices. The dataset was collected from an online github repo: https://github.com/UCSD-AI4H/COVID-CT (28/04/2020).
 
-At this stage, due to size, I am not adding the network weights and the pickles models to git. 
+The details of the study are found in the folder named __extraction__. 
 
-The details of the study are found in the folder names extraction. 
+The script used to develop the transfer learning model is saved in this directory: __extraction/model/MondayDenseNet169/__
 
-the transfer learning model is saved in the folder named model with the code
-The ensembles are saved in Reportedmodels
+The scripts utilized to develop the ensembles of decision trees are saved in __extraction__.
 
-ExtractFeatures_ThenEnsembles contains the notebook used to get extracted features and try ensembles
+The results are also saved in .csv files in __extraction__ .
 
-Some of the files were collecteda as is in the 28/04/2020.
-This includes images, data-spilt, metainfo etc. 
+In this study, the deep learning transfer learning model was trained to extract deep features, then ensembles were trained using the extracted deep features. 
+
+Six types of ensembles of decision trees were incorporated: 
+
+- Extreme Gradient Boosting (XGBoost)
+- Gradient Boosting Decision Trees (GBDT)
+- Bagged Decision Trees (BDT)
+- Adaptive Boosting Decision Trees (Adaboost)
+- Dropouts meet multiple Additive Regression Trees (DART)
+- Random Forest (RF)
+
+The study targeted investigating the effect of using ensembles for detecting covid-19 in CT images. 
+
